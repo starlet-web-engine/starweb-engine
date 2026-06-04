@@ -1,6 +1,6 @@
 import type { RectBody, OBB, AABB } from "./types.ts";
 
-/** Creates a {@link PhysicsBody} with zero initial velocity.
+/** Creates a {@link RectBody} with zero initial velocity.
  * @param params.angle - Initial angle in radians. Default: `0`.
  */
 export function createBody(params: {
