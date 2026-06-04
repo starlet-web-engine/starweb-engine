@@ -30,16 +30,26 @@ export interface AABB {
   hh: number;
 }
 
+/** Circle defined by center and radius. */
+export interface Circle {
+  /** Center x in world pixels. */
+  cx: number;
+  /** Center y in world pixels. */
+  cy: number;
+  /** Radius in pixels. */
+  r: number;
+}
+
 /** Minimum Translation Vector - the axis and depth needed to resolve a collision. */
 export interface MTV {
-  /** Unit vector pointing out of the AABB toward the OBB. */
+  /** Unit vector pointing from shape A toward shape B. */
   axis: Vec2;
   /** Penetration depth along axis. */
   depth: number;
 }
 
-/** A physics body with position, velocity, angle, and dimensions. */
-export interface PhysicsBody {
+/** A rectangle with position, velocity, angle, and dimensions. */
+export interface RectBody {
   /** World-space position in pixels. */
   position: Vec2;
   /** Velocity in pixels per second. */
@@ -50,6 +60,16 @@ export interface PhysicsBody {
   w: number;
   /** Hitbox height in pixels. */
   h: number;
+  /** Mass. */
+  mass: number;
+}
+
+/** A circle with velocity.*/
+export interface CircleBody extends Circle {
+  /** Velocity X in pixels per second. */
+  vx: number;
+  /** Velocity Y in pixels per second. */
+  vy: number;
   /** Mass. */
   mass: number;
 }
