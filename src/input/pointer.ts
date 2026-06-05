@@ -1,9 +1,9 @@
 let isPointerInitialized = false;
-const down = new Set<number>();
-const clicked = new Set<number>();
+const down     = new Set<number>();
+const clicked  = new Set<number>();
 const released = new Set<number>();
-let clickedFrame = new Set<number>();
-let releasedFrame = new Set<number>();
+let clickedFrame:  readonly number[] = [];
+let releasedFrame: readonly number[] = [];
 
 let canvasRef: HTMLCanvasElement | null = null;
 let posX = 0;
@@ -80,12 +80,12 @@ export function isPointerDown(button = 0): boolean      { return down.has(button
 /** Returns `true` if the given button was clicked this frame.
  * @param button - Pointer button index. Default: `0` (primary).
  */
-export function wasPointerClicked(button = 0): boolean  { return clickedFrame.has(button); }
+export function wasPointerClicked(button = 0): boolean  { return clickedFrame.includes(button); }
 
 /** Returns `true` if the given button was released this frame.
  * @param button - Pointer button index. Default: `0` (primary).
  */
-export function wasPointerReleased(button = 0): boolean { return releasedFrame.has(button); }
+export function wasPointerReleased(button = 0): boolean { return releasedFrame.includes(button); }
 
 /** Returns the pointer's current X position in canvas pixel coordinates. */
 export function pointerX(): number { return posX; }
@@ -95,14 +95,11 @@ export function pointerY(): number { return posY; }
 
 /** Advances the per-frame click and release state. Called once per frame by {@link startLoop}. */
 export function clearFramePointer(): void {
-  clickedFrame = new Set(clicked);
-  releasedFrame = new Set(released);
+  clickedFrame  = [...clicked];
+  releasedFrame = [...released];
   clicked.clear();
   released.clear();
 }
 
 /** Clears the per-frame click and release state immediately. */
-export function flushPointer(): void {
-  clickedFrame.clear();
-  releasedFrame.clear();
-}
+export function flushPointer(): void { clickedFrame = []; releasedFrame = []; }

@@ -71,16 +71,22 @@ export function startLoop(
       return;
     }
 
-    clearFrameKeyboard();
-    clearFramePointer();
-
     const elapsed = Math.min(nowMs - lastTime, maxDelta);
     lastTime = nowMs;
 
-    if (tickRate === "variable") update(elapsed);
-    else {
+    if (tickRate === "variable") {
+      clearFrameKeyboard();
+      clearFramePointer();
+      update(elapsed);
+    } else {
       accumulator += elapsed;
+      let ticked = false;
       while (accumulator >= tickRate) {
+        if (!ticked) {
+          clearFrameKeyboard();
+          clearFramePointer();
+          ticked = true;
+        }
         update(tickRate);
         accumulator -= tickRate;
       }
