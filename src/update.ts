@@ -1,5 +1,5 @@
-import { clearFramePointer  } from "./input/pointer.ts";
-import { clearFrameKeyboard } from "./input/keyboard.ts";
+import { clearFramePointer  } from "./input/pointer.js";
+import { clearFrameKeyboard } from "./input/keyboard.js";
 
 /** Options for configuring the game loop. */
 export interface LoopOptions {

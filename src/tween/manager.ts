@@ -1,5 +1,5 @@
-import { type EasingFunction, TWEEN_EASING } from "./easing.ts";
-import type { TweenConfig, TweenHandle, TweenTarget, TweenManager } from "./types.ts";
+import { type EasingFunction, TWEEN_EASING                        } from "./easing.js";
+import type { TweenConfig, TweenHandle, TweenTarget, TweenManager } from "./types.js";
 
 type ResolvedProp   = {
   readonly from: number;

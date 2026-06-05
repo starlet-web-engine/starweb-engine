@@ -10,10 +10,16 @@
   "keywords": ["game-engine", "canvas", "2d", "typescript", "web-audio"],
   "version": "1.0.0",
   "type": "module",
-  "exports": {
-    "./*.ts": "./src/*.ts"
-  },
   "devDependencies": {
     "typescript": "~6.0.2"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json"
+  },
+  "exports": {
+    "./*": {
+      "types": "./dist/*.d.ts",
+      "import": "./dist/*.js"
+    }
   }
 }

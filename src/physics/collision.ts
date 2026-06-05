@@ -1,5 +1,5 @@
-import type { Vec2, OBB, AABB, MTV, Circle } from "./types.ts";
-import { obbCorners, aabbCorners, project } from "./geometry.ts";
+import type { Vec2, OBB, AABB, MTV, Circle } from "./types.js";
+import { obbCorners, aabbCorners, project  } from "./geometry.js";
 
 /** Tests an OBB against an AABB using the Separating Axis Theorem.
  * @returns The {@link MTV} to resolve the collision, or `null` if no overlap.
