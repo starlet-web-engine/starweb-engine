@@ -1,11 +1,11 @@
 {
-  "name": "web-engine",
+  "name": "starweb-engine",
   "description": "A lightweight 2D game engine for the browser",
   "author": "Mason L'Etoile",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/masonlet/web-engine"
+    "url": "https://github.com/starlet-web-engine/starweb-engine"
   },
   "keywords": ["game-engine", "canvas", "2d", "typescript", "web-audio"],
   "version": "1.0.0",
