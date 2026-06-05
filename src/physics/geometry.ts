@@ -1,4 +1,4 @@
-import type { Vec2, OBB, AABB } from "./types.ts";
+import type { Vec2, OBB, AABB } from "./types.js";
 
 /** Returns the four world-space corner vertices of an {@link OBB}. */
 export function obbCorners(o: OBB): Vec2[] {

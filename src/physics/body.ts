@@ -1,4 +1,4 @@
-import type { RectBody, OBB, AABB } from "./types.ts";
+import type { RectBody, OBB, AABB } from "./types.js";
 
 /** Creates a {@link RectBody} with zero initial velocity.
  * @param params.angle - Initial angle in radians. Default: `0`.

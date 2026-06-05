@@ -1,4 +1,4 @@
-import { type EasingName } from "./easing.ts";
+import { type EasingName } from "./easing.js";
 
 /** An object whose properties can be animated by the tween system. */
 export type TweenTarget = {

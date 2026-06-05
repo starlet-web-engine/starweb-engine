@@ -1,6 +1,6 @@
-import type { OBB, AABB } from "./types.ts";
-import { obbCorners     } from "./geometry.ts";
-import { obbVsAabb      } from "./collision.ts";
+import type { OBB, AABB } from "./types.js";
+import { obbCorners     } from "./geometry.js";
+import { obbVsAabb      } from "./collision.js";
 
 /** Returns all regions from `regions` that overlap the given OBB. */
 export function overlappingRegions(obb: OBB, regions: AABB[]): AABB[] {
