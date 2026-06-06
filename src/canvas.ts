@@ -34,8 +34,12 @@ export function createGameCanvas(
   if (!ctx) throw new Error("2D canvas context not found");
 
   const onResize = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const dpr     = window.devicePixelRatio ?? 1;
+    canvas.width  = window.innerWidth  * dpr;
+    canvas.height = window.innerHeight * dpr;
+    canvas.style.width  = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.imageSmoothingEnabled = imageSmoothing;
   }
   window.addEventListener("resize", onResize);
