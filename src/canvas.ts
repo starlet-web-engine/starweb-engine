@@ -7,9 +7,11 @@ export interface CanvasOptions {
 /** The result of {@link createGameCanvas}. */
 export interface GameCanvas {
   /** The underlying canvas element. */
-  canvas: HTMLCanvasElement;
+  canvas:  HTMLCanvasElement;
   /** The 2D rendering context for the canvas. */
-  ctx: CanvasRenderingContext2D;
+  ctx:     CanvasRenderingContext2D;
+  /** Canvas width and height. */
+  size:    { readonly width: number; readonly height: number };
   /** Removes the canvas from the DOM and cleans up the resize listener. */
   destroy: () => void;
 }
@@ -33,9 +35,17 @@ export function createGameCanvas(
   const ctx = canvas.getContext("2d");
   if (!ctx) throw new Error("2D canvas context not found");
 
+  const size = { width: 0, height: 0 };
+
   const onResize = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const dpr     = window.devicePixelRatio ?? 1;
+    size.width   = window.innerWidth;
+    size.height  = window.innerHeight;
+    canvas.width  = size.width  * dpr;
+    canvas.height = size.height * dpr;
+    canvas.style.width  = `${size.width}px`;
+    canvas.style.height = `${size.height}px`;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     ctx.imageSmoothingEnabled = imageSmoothing;
   }
   window.addEventListener("resize", onResize);
@@ -45,6 +55,7 @@ export function createGameCanvas(
   return {
     canvas,
     ctx,
+    size,
     destroy: () => {
       if (destroyed) return;
       destroyed = true;
