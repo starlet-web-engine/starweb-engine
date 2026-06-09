@@ -1,4 +1,4 @@
-# Web Engine
+# Starweb Engine
 
 A lightweight 2D game engine for the browser, built with TypeScript and the Web Audio / Canvas APIs.
 
@@ -21,7 +21,7 @@ A lightweight 2D game engine for the browser, built with TypeScript and the Web 
 
 ## Installation
 ```bash
-npm install github:masonlet/web-engine
+npm install github:starweb-libs/engine
 ```
 
 ## License
