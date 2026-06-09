@@ -17,6 +17,7 @@ A lightweight 2D game engine for the browser, built with TypeScript and the Web 
 | `assets`         | Image loading and tinting                         |
 | `input/keyboard` | Per-frame keyboard state                          |
 | `input/pointer`  | Per-frame pointer/mouse state with canvas scaling |
+| `validate`       | JSON validation helpers and error collector       |
 
 ## Installation
 ```bash
