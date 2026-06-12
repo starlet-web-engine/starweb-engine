@@ -1,27 +1,44 @@
 {
-  "name": "starweb-engine",
+  "name": "@starweb-libs/engine",
   "description": "A lightweight 2D game engine for the browser",
   "author": "Mason L'Etoile",
+  "version": "0.0.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/starweb-libs/engine"
+    "url": "git+https://github.com/starweb-libs/engine.git"
   },
-  "keywords": ["game-engine", "canvas", "2d", "typescript"],
-  "version": "1.0.0",
+  "homepage": "https://github.com/starweb-libs/engine#readme",
+  "bugs": { "url": "https://github.com/starweb-libs/engine/issues" },
+  "keywords": ["game-engine", "canvas", "2d", "typescript", "browser", "starweb"],
   "type": "module",
-  "devDependencies": {
-    "typescript": "~6.0.2"
-  },
-  "scripts": {
-    "build": "tsc -p tsconfig.build.json",
-    "prepare": "tsc -p tsconfig.build.json"
-  },
-  "files": ["dist", "src"],
+  "devDependencies": { "typescript": "~6.0.2" },
+  "scripts": { "build": "tsc -p tsconfig.build.json" },
+  "files": ["dist"],
   "exports": {
-    "./*.js": {
-      "types": "./dist/*.d.ts",
-      "import": "./dist/*.js"
+    "./assets.js": {
+      "types": "./dist/assets.d.ts",
+      "import": "./dist/assets.js"
+    },
+    "./canvas.js": {
+      "types": "./dist/canvas.d.ts",
+      "import": "./dist/canvas.js"
+    },
+    "./input/keyboard.js": {
+      "types": "./dist/input/keyboard.d.ts",
+      "import": "./dist/input/keyboard.js"
+    },
+    "./input/pointer.js": {
+      "types": "./dist/input/pointer.d.ts",
+      "import": "./dist/input/pointer.js"
+    },
+    "./update.js": {
+      "types": "./dist/update.d.ts",
+      "import": "./dist/update.js"
+    },
+    "./validate.js": {
+      "types": "./dist/validate.d.ts",
+      "import": "./dist/validate.js"
     }
   }
 }
