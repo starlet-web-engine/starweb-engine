@@ -2,7 +2,7 @@
   "name": "@starweb-libs/engine",
   "description": "A lightweight 2D game engine for the browser",
   "author": "Mason L'Etoile",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,36 +12,45 @@
   "bugs": { "url": "https://github.com/starweb-libs/engine/issues" },
   "keywords": ["game-engine", "canvas", "2d", "typescript", "browser", "starweb"],
   "type": "module",
-  "devDependencies": { "typescript": "~6.0.2" },
+  "devDependencies": {
+    "typescript": "~6.0.2",
+    "tsdown": "^0.22.0"
+  },
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsdown",
     "prepare": "npm run build"
   },
   "files": ["dist"],
   "exports": {
     "./assets.js": {
-      "types": "./dist/assets.d.ts",
-      "import": "./dist/assets.js"
+      "types": "./dist/assets.d.mts",
+      "@starweb-libs/source": "./src/assets.ts",
+      "import": "./dist/assets.mjs"
     },
     "./canvas.js": {
-      "types": "./dist/canvas.d.ts",
-      "import": "./dist/canvas.js"
+      "types": "./dist/canvas.d.mts",
+      "@starweb-libs/source": "./src/canvas.ts",
+      "import": "./dist/canvas.mjs"
     },
     "./input/keyboard.js": {
-      "types": "./dist/input/keyboard.d.ts",
-      "import": "./dist/input/keyboard.js"
+      "types": "./dist/input/keyboard.d.mts",
+      "@starweb-libs/source": "./src/input/keyboard.ts",
+      "import": "./dist/input/keyboard.mjs"
     },
     "./input/pointer.js": {
-      "types": "./dist/input/pointer.d.ts",
-      "import": "./dist/input/pointer.js"
+      "types": "./dist/input/pointer.d.mts",
+      "@starweb-libs/source": "./src/input/pointer.ts",
+      "import": "./dist/input/pointer.mjs"
     },
     "./update.js": {
-      "types": "./dist/update.d.ts",
-      "import": "./dist/update.js"
+      "types": "./dist/update.d.mts",
+      "@starweb-libs/source": "./src/update.ts",
+      "import": "./dist/update.mjs"
     },
     "./validate.js": {
-      "types": "./dist/validate.d.ts",
-      "import": "./dist/validate.js"
+      "types": "./dist/validate.d.mts",
+      "@starweb-libs/source": "./src/validate.ts",
+      "import": "./dist/validate.mjs"
     }
   }
 }
