@@ -2,7 +2,7 @@
   "name": "@starweb-libs/engine",
   "description": "A lightweight 2D game engine for the browser",
   "author": "Mason L'Etoile",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "license": "MIT",
   "repository": {
     "type": "git",
