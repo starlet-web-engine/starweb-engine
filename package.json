@@ -51,6 +51,16 @@
       "types": "./dist/validate.d.mts",
       "@starweb-libs/source": "./src/validate.ts",
       "import": "./dist/validate.mjs"
+    },
+    "./bootstrap.js": {
+      "types": "./dist/bootstrap.d.mts",
+      "@starweb-libs/source": "./src/bootstrap.ts",
+      "import": "./dist/bootstrap.mjs"
+    },
+    "./transition.js": {
+      "types": "./dist/transition.d.mts",
+      "@starweb-libs/source": "./src/transition.ts",
+      "import": "./dist/transition.mjs"
     }
   }
 }
