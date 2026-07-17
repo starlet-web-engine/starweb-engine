@@ -2,6 +2,10 @@
 
 A lightweight 2D game engine for the browser, built with TypeScript and the Web Audio / Canvas APIs.
 
+[![CI](https://github.com/starweb-libs/engine/actions/workflows/ci.yml/badge.svg)](https://github.com/starweb-libs/engine/actions/workflows/ci.yml)
+[![Library Version](https://img.shields.io/npm/v/@starweb-libs/engine)](https://www.npmjs.com/package/@starweb-libs/engine)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green)](./LICENSE)
+
 ## Tech Stack
 <p align="left">
   <img height="35" src="https://img.shields.io/badge/TypeScript-%23007ACC?logo=typescript&logoColor=white&style=for-the-badge"/>
