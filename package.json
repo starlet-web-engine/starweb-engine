@@ -2,7 +2,7 @@
   "name": "@starweb-libs/engine",
   "description": "A lightweight 2D game engine for the browser",
   "author": "Mason L'Etoile",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -68,11 +68,6 @@
       "types": "./dist/bootstrap.d.mts",
       "@starweb-libs/source": "./src/bootstrap.ts",
       "import": "./dist/bootstrap.mjs"
-    },
-    "./transition.js": {
-      "types": "./dist/transition.d.mts",
-      "@starweb-libs/source": "./src/transition.ts",
-      "import": "./dist/transition.mjs"
     }
   }
 }
