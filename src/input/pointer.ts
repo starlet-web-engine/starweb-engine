@@ -90,6 +90,27 @@ export function pointerX(): number { return posX; }
 /** Returns the pointer's current Y position in canvas pixel coordinates. */
 export function pointerY(): number { return posY; }
 
+export interface PointerState {
+  /** Canvas-relative X coordinate. */
+  x: number;
+  /** Canvas-relative Y coordinate. */
+  y: number;
+  /** Whether the primary button was clicked during the current frame. */
+  clicked: boolean;
+  /** Whether the primary button is currently held. */
+  down: boolean;
+}
+
+/** Returns the pointer state and canvas-relative position. */
+export function getPointer(): PointerState {
+  return {
+    x: pointerX(),
+    y: pointerY(),
+    clicked: wasPointerClicked(),
+    down: isPointerDown(),
+  };
+}
+
 /** Advances the per-frame click and release state. Called once per frame by {@link startLoop}. */
 export function clearFramePointer(): void {
   clickedFrame  = [...clicked];
