@@ -23,7 +23,6 @@ A lightweight 2D game engine for the browser, built with TypeScript and the Web 
 | `input/pointer`  | Per-frame pointer/mouse state with canvas scaling |
 | `validate`       | JSON validation helpers and error collector       |
 | `bootstrap`      | Canvas, keyboard, pointer setup in one call       |
-| `transition`     | Frame transition helper (flush input, play sound) |
 
 ## Installation
 ```bash
